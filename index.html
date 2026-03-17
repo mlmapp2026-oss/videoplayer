@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
 margin:0;
@@ -30,22 +31,20 @@ border:none;
 document.addEventListener("contextmenu", function(e){
 e.preventDefault();
 });
-
-function loadVideo(){
-const params = new URLSearchParams(window.location.search);
-const id = params.get("v");
-if(id){
-document.getElementById("player").src =
-"https://drive.google.com/file/d/"+id+"/preview";
-}
-}
 </script>
+
 </head>
 
-<body onload="loadVideo()">
+<body>
 
 <div class="video-container">
-<iframe id="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<iframe 
+src="https://drive.google.com/file/d/1V5vB3aAIeEyrUthITWA9zD9lD-nSydIx/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
 </div>
 
 </body>
