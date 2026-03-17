@@ -24,20 +24,28 @@ width:100%;
 height:calc(100vh + 60px);
 border:none;
 }
-
 </style>
 
 <script>
 document.addEventListener("contextmenu", function(e){
 e.preventDefault();
 });
-</script>
 
+function loadVideo(){
+const params = new URLSearchParams(window.location.search);
+const id = params.get("v");
+if(id){
+document.getElementById("player").src =
+"https://drive.google.com/file/d/"+id+"/preview";
+}
+}
+</script>
 </head>
-<body>
+
+<body onload="loadVideo()">
 
 <div class="video-container">
-<iframe src="https://drive.google.com/file/d/1V5vB3aAIeEyrUthITWA9zD9lD-nSydIx/preview"></iframe>
+<iframe id="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 
 </body>
